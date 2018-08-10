@@ -22,31 +22,34 @@ import com.example.controlmoneyapi.repository.CategoriaRepository;
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaResource {
-	
+
 	@Autowired
 	private CategoriaRepository cr;
-	
+
 	@GetMapping
-	public List<Categoria> listar(){
+	public List<Categoria> listar() {
 		return cr.findAll();
 	}
-	
+
 	@PostMapping
-	//@ResponseStatus(HttpStatus.CREATED)
+	// @ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Categoria> criar(@RequestBody Categoria categoria, HttpServletResponse response) {
 		Categoria categoriaSalva = cr.save(categoria);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{codigo}")
-		.buildAndExpand(categoriaSalva.getCodigo()).toUri();
+				.buildAndExpand(categoriaSalva.getCodigo()).toUri();
 		response.setHeader("Location", uri.toASCIIString());
-		
+
 		return ResponseEntity.created(uri).body(categoriaSalva);
 	}
-	
-	@GetMapping("/{codigo}")
-	public Optional<Categoria> buscarPeloCodigo(@PathVariable Long codigo) {
-		return cr.findById(codigo);
-	}
-	
-	
 
-}
+	@GetMapping("/{codigo}")
+	public ResponseEntity<Optional<Categoria>> buscarPeloCodigo(@PathVariable Long codigo) {
+			Optional<Categoria> categoria = cr.findById(codigo);
+			if(categoria.isPresent()) {
+			return ResponseEntity.ok(categoria);
+			
+		}else  {
+			return ResponseEntity.notFound().build();
+
+		}}}
+	
