@@ -6,8 +6,4 @@ import com.example.controlmoneyapi.model.Categoria;
 
 public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 
-
-	
-	
-
 }
