@@ -6,4 +6,7 @@ import com.example.controlmoneyapi.model.Pessoa;
 
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 
+
+	
+
 }
