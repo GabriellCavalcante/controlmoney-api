@@ -23,4 +23,17 @@ public class PessoaService {
 				throw new EmptyResultDataAccessException(1);
 			}
 		}
+
+	public void atualizarPropriedadeAtivo(Long codigo, Boolean ativo) {
+		try {
+			Pessoa pessoaSalva = pr.getOne(codigo);
+			pessoaSalva.setAtivo(ativo);
+			pr.save(pessoaSalva);
+			} catch (Exception e) {
+				throw new EmptyResultDataAccessException(1);
+			}
+		}
+
+		
 	}
+	
