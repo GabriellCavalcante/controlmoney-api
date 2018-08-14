@@ -21,3 +21,16 @@ INSERT INTO pessoa (nome, ativo, logradouro, numero, complemento, bairro, cep, c
              values ('Adriano Cavalcante', true, 'Travessa dos poetas', '1509', 'Perto do Extra', 'Estelamares', '06730-500', 'Cotia', 'São Paulo');
 INSERT INTO pessoa (nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado)
              values ('Vitor Tolesano', true, 'Av. Dos travecos', '712', 'Muito longe', 'Recanto dos Victors', '06724-024', 'Cidade Perdida', 'Tihuana');
+INSERT INTO pessoa (nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado)
+             values ('Goku', false, 'Av. kami', '234', 'mais longe ainda', 'não sei', '06724-024', 'Cidade Perdida', 'Planeta terra');
+INSERT INTO pessoa (nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado)
+             values ('Ricardo', false, 'Av. umdois', '999', 'perto da padaria', 'Lava pés', '06654-022', 'Cotia', 'São Paulo');
+INSERT INTO pessoa (nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado)
+             values ('José', true, 'Av. Bahamas', '888', 'perto do Egito', 'Cidade de Deus', '06722-000', 'Cidade Perdida', 'Planeta terra');
+INSERT INTO pessoa (nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado)
+             values ('Tom', false, 'Av. Cartoom', '111', 'peto do jerry', 'lá', '06724-123', 'Cidade Cachorro loko', 'Desenho');
+INSERT INTO pessoa (nome, ativo, logradouro, numero, complemento, bairro, cep, cidade, estado)
+             values ('Doido', false, 'Av. da loucura', '13', null, 'Manicombio', '06724-024', 'Osasco', 'São Paulo');
+
+
+
