@@ -27,6 +27,9 @@ public class Lancamento {
 	@Column(name = "data_vencimento")
 	private LocalDate dataVencimento;
 	
+	@Column(name = "data_pagamento")
+	private LocalDate dataPagamento;
+	
 	private BigDecimal valor;
 	
 	private String observacao;
@@ -41,6 +44,16 @@ public class Lancamento {
 	@ManyToOne
 	@JoinColumn(name = "codigo_pessoa")
 	private Pessoa pessoa;
+	
+	
+
+	public LocalDate getDataPagamento() {
+		return dataPagamento;
+	}
+
+	public void setDataPagamento(LocalDate dataPagamento) {
+		this.dataPagamento = dataPagamento;
+	}
 
 	public Long getCodigo() {
 		return codigo;
