@@ -25,6 +25,7 @@ import com.example.controlmoneyapi.event.RecursoCriadoEvent;
 import com.example.controlmoneyapi.exceptionhandler.ControlmoneyExceptionHandler.Erro;
 import com.example.controlmoneyapi.model.Lancamento;
 import com.example.controlmoneyapi.repository.LancamentoRepository;
+import com.example.controlmoneyapi.repository.filter.LancamentoFilter;
 import com.example.controlmoneyapi.service.LancamentoService;
 import com.example.controlmoneyapi.service.exception.PessoaInexistenteOuInativaException;
 
@@ -45,8 +46,8 @@ public class LancamentoResource {
 	private MessageSource messageSource;
 
 	@GetMapping
-	public List<Lancamento> listar() {
-		return lr.findAll();
+	public List<Lancamento> pesquisar(LancamentoFilter lancamentoFilter) {
+		return lr.filtrar(lancamentoFilter);
 	}
 
 	@GetMapping("/{codigo}")
